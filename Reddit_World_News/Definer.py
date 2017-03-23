@@ -86,7 +86,6 @@ def add(*args):
 	term = term.title()
 
 	if(location == "base"):
-		printFlush("In base...")
 		if term in running_search_terms.keys():
 			printFlush("Search topic '" + term + "' already exists.")
 			return
@@ -94,9 +93,7 @@ def add(*args):
 			running_search_terms.__setitem__(term, [])
 			printFlush("Search topic '" + term + "' added.")
 	else:
-		printFlush("Area 1 : " + str(running_search_terms.get(location)) )
 		if term in running_search_terms.get(location):
-			printFlush("In not base...")
 			printFlush("Search term '" + term + "' already exists.")
 			return
 		else:

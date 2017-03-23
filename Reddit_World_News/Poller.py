@@ -125,8 +125,6 @@ def getSearchTerms():
 	base_txt.readline()
 	search_list = base_txt.readline().strip()
 
-	printFlush(str(search_list))
-
 	base_txt.close()
 
 	try:
