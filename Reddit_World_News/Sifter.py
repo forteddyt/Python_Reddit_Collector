@@ -6,7 +6,6 @@ import sys
 import os
 import time
 file_path = os.path.dirname(os.path.realpath(__file__)) + "\\" # Obtains the scripts file path
-
 # A simple print with a system flush afterwards
 def printFlush(string = ''):
 	print(string)

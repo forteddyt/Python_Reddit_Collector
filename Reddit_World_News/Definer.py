@@ -76,27 +76,31 @@ def add(*args):
 
 	global location
 	global stored_search_terms
-	global running_search_termss
+	global running_search_terms
 
 	term = ""
 
 	for item in args:
 		term += str(item) + " "
 	term = term.strip()
+	term = term.title()
 
 	if(location == "base"):
-		if term.title() in running_search_terms.keys():
+		printFlush("In base...")
+		if term in running_search_terms.keys():
 			printFlush("Search topic '" + term + "' already exists.")
 			return
 		else:
-			running_search_terms.__setitem__(term.title(), [])
+			running_search_terms.__setitem__(term, [])
 			printFlush("Search topic '" + term + "' added.")
 	else:
-		if term.lower() in running_search_terms.get(location):
+		printFlush("Area 1 : " + str(running_search_terms.get(location)) )
+		if term in running_search_terms.get(location):
+			printFlush("In not base...")
 			printFlush("Search term '" + term + "' already exists.")
 			return
 		else:
-			running_search_terms.get(location).append(term.lower())
+			running_search_terms.get(location).append(term)
 			printFlush("Search term '" + term + "' added.")
 
 
@@ -107,7 +111,7 @@ def remove(*args):
 
 	global location
 	global stored_search_terms
-	global running_search_termss
+	global running_search_terms
 
 	if args[0] == "-all":
 		if len(args) > 1:
@@ -165,7 +169,7 @@ def edit(*args):
 
 	global location
 	global stored_search_terms
-	global running_search_termss
+	global running_search_terms
 
 	if tag == None:
 		for item in args:
@@ -174,6 +178,7 @@ def edit(*args):
 		for item in args[1:]:
 			term += str(item) + " "
 	term = term.strip()
+	term = term.title()
 
 	if tag == "-a":
 		add(*args[1:])
@@ -183,7 +188,7 @@ def edit(*args):
 		remove(*args[1:])
 	else:
 		if location == "base":
-			if term.title() in running_search_terms.keys():
+			if term in running_search_terms.keys():
 				location = term
 			else:
 				printFlush("Search term '" + term + "' does not exist.")
@@ -199,7 +204,7 @@ def store(*args):
 		return
 
 	global stored_search_terms
-	global running_search_termss
+	global running_search_terms
 
 	stored_search_terms = running_search_terms.copy()
 	printFlush("Running search list stored.")
@@ -288,7 +293,7 @@ def show(*args):
 			key = key.strip()
 
 	global stored_search_terms
-	global running_search_termss
+	global running_search_terms
 
 	if is_stored:
 		cur_list = stored_search_terms

@@ -5,7 +5,7 @@
 
 import sys
 import os
-
+ 
 file_path = os.path.dirname(os.path.realpath(__file__)) + "\\" # Obtains the scripts file path
 
 # A simple print with a system flush afterwards
@@ -124,6 +124,8 @@ def getSearchTerms():
 	# The search list dictionary is on the second line of base.txt
 	base_txt.readline()
 	search_list = base_txt.readline().strip()
+
+	printFlush(str(search_list))
 
 	base_txt.close()
 
