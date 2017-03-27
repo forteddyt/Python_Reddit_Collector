@@ -6,7 +6,7 @@
 import os
 import sys
 from Poller import getSearchTerms
-file_path = os.path.dirname(os.path.realpath(__file__)) + "\\" # Obtains the scripts file path
+file_path = os.path.dirname(os.path.realpath(__file__)) + "/" # Obtains the scripts file path
 stored_search_terms = getSearchTerms()
 running_search_terms = stored_search_terms.copy()
 err = "Invalid combination"
