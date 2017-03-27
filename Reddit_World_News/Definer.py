@@ -92,11 +92,11 @@ def add(*args):
 			running_search_terms.__setitem__(term.title(), [])
 			printFlush("Search topic '" + term + "' added.")
 	else:
-		if term.lower() in running_search_terms.get(location):
+		if term.title() in running_search_terms.get(location):
 			printFlush("Search term '" + term + "' already exists.")
 			return
 		else:
-			running_search_terms.get(location).append(term.lower())
+			running_search_terms.get(location).append(term.title())
 			printFlush("Search term '" + term + "' added.")
 
 
