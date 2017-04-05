@@ -2,7 +2,7 @@
 A set of Python scripts that poll Reddit (Poller.py), sift through data (Sifter.py), and format it into a WordDoc (Creator.py). Interaction between user and script is typically done through the custom shell (Definer.py).  
 
 # Description
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used in my Undergraduate Research group as well as a data collection unit in a Senior group's AI project, this somewhat small independent programming project focuses on collecting popular Reddit posts. Through Definer.py, users can specify the keywords to search for and categorize those keywords into topics. Currently, it is restricted to the /r/WorldNews subreddit for post collection. However, there are plans to build the option to customize what subreddits are searched through into the Definery.py shell. To ensure no data is lost, copies of the .txt files are archived in a separate folder.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This somewhat small independent programming project focuses on collecting popular Reddit posts. Through Definer.py, users can specify the keywords to search for and categorize those keywords into topics. Currently, it is restricted to the /r/WorldNews subreddit for post collection. However, there are plans to build the option to customize what subreddits are searched through into the Definery.py shell. To ensure no data is lost, copies of the .txt files are archived in a separate folder.  
 
 **These scripts function in Windows**. It's been tested in Linux, but has failed (mostly due to the difference in "/" vs "\" within filepaths).  
 
